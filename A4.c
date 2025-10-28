@@ -1,4 +1,3 @@
-//write a version that has a real thread pool of three threads and the threads loop over and select tasks to do (needs queuelock)
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
