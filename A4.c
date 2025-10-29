@@ -82,18 +82,10 @@ void insert_complete(Task *task){
 }
 
 void remove_task(Task *task){
-    if(task->prev){
-        task->prev->next = task->next;
-    }
-    else{
-        taskhead = task->next;
-    }
-    if(task->next){
-        task->next->prev = task->prev;
-    }
-    else{
-        tasktail = task->prev;
-    }
+    if(task->prev) task->prev->next = task->next;
+    else taskhead = task->next;
+    if(task->next) task->next->prev = task->prev;
+    else tasktail = task->prev;
     task->next = NULL;
     task->prev = NULL;
     return;
@@ -110,15 +102,6 @@ void free_list(){
     }
     free(curr);
     completehead = NULL;
-    return;
-}
-
-void print_list(){
-    Task *curr = taskhead;
-    while(curr != NULL){
-        printf("[Task: %d]\n", curr->Id);
-        curr = curr->next;
-    }
     return;
 }
 
