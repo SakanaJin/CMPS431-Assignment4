@@ -29,7 +29,6 @@ int turns = 0;
 int cancelledcount = 0;
 int bumpcount = 0;
 
-int activethreadcount = 0;
 pthread_t thread_ids[MAXTHREADS];
 pthread_mutex_t global = PTHREAD_MUTEX_INITIALIZER;
 pthread_barrier_t start_barrier;
